@@ -6,13 +6,13 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2021/11/16 13:52:08 by mahadad          ###   ########.fr        #
+#    Updated: 2021/12/22 16:06:55 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # _.-=+=-._.-=+=-._[ Var ]_.-=+=-._.-=+=-._ #
 
-NAME = <exe or lib>
+NAME = push_swap
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror $(INCLUDES)
@@ -57,9 +57,7 @@ $(OBJ_DIR):
 	@printf "\033[32;1m[Create $(OBJ_DIR)]\033[32;0m\n"
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	# Final command (exe or lib)
-	# @ar -rcs $(NAME) $(OBJS)
-	# @$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@printf "\033[32;1m[== Linked OK ==]\033[32;0m\n"
 
 clean:
