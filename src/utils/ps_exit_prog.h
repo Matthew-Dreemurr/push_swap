@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_exit_prog.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/22 17:02:14 by mahadad          ###   ########.fr       */
+/*   Created: 2021/12/22 17:03:21 by mahadad           #+#    #+#             */
+/*   Updated: 2021/12/22 17:09:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PS_EXIT_PROG_H
+# define PS_EXIT_PROG_H
 
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-		return (0);
-	ps_arg_check(&av);
-	return (0);
-}
+void	ps_exit_prog(void);
+
+#endif
