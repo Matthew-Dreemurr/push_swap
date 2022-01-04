@@ -6,13 +6,16 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:03:21 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/22 17:09:18 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 13:25:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PS_EXIT_PROG_H
 # define PS_EXIT_PROG_H
 
-void	ps_exit_prog(void);
+# include "ps_struct.h"
+
+void	ps_exit_prog(int ret, t_data *data);
+void	ps_prog_free(t_data *data);
 
 #endif

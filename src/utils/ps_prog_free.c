@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_prog_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:17:57 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 13:21:34 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/04 13:24:56 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ps_exit_prog.h"
 
-# include "ps_struct.h"
-
-#endif
+void	ps_prog_free(t_data *data)
+{
+}

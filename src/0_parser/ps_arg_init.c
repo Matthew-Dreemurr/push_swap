@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_error.h                                         :+:      :+:    :+:   */
+/*   ps_arg_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 17:03:54 by mahadad           #+#    #+#             */
-/*   Updated: 2021/12/22 17:04:20 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/04 13:07:07 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/04 13:42:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_ERROR_H
-# define PS_ERROR_H
+#include "ps_parser.h"
+#include <stdlib.h>
+#include "libft.h"
 
-#endif
+void	ps_arg_init(int ac, const char **av, t_data *data)
+{
+	data->size = ac - 1;
+	data->set = malloc(sizeof(int) * data->size);
+	if (!data->set)
+		ps_exit_prog(EXIT_FAILURE, data);
+	ft_bzero(data->set, sizeof(int) * data->size);
+	ps_arg_check(av, &data);
+}

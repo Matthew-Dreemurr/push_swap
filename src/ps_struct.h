@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_struct.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:17:57 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 13:21:34 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/04 13:21:48 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/04 13:22:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PS_STRUCT_H
+# define PS_STRUCT_H
 
-# include "ps_struct.h"
+typedef struct s_data
+{
+	int	*stack;
+	int	*set;
+	int	*solve;
+	int	size;
+	int	sep;
+}				t_data;
 
 #endif
