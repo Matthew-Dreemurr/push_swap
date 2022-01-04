@@ -6,12 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 13:24:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/04 15:40:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_exit_prog.h"
 
+
 void	ps_prog_free(t_data *data)
 {
+	(void)data;
 }
