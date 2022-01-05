@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:01:36 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 17:56:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 15:17:14 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 #include "libft.h"
 #include <stdlib.h>
 
-//TODO check for the int max & min
-static long	ps_atol(const char *str, t_data *data)
+static long	ps_atoi(const char *str, t_data *data)
 {
 	unsigned long	nbr;
 	unsigned long	cutoff;
 	int				cutlim;
-	int				max;
-	unsigned long	isneg;
+	int				isneg;
 
 	nbr = 0;
 	isneg = 0;
@@ -29,9 +27,8 @@ static long	ps_atol(const char *str, t_data *data)
 		str++;
 	isneg = (*str == '-');
 	str += (isneg || *str == '+');
-	max = (unsigned long []){INT_MAX, -INT_MIN}[isneg]; //XXX WIP
-	cutoff = (unsigned long)(max / 10);
-	cutlim = (int)(max % 10);
+	cutoff = ((unsigned long []){INT_MAX, -(unsigned)INT_MIN}[isneg] / 10);
+	cutlim = (int)((long []){INT_MAX, -(unsigned)INT_MIN}[isneg] % 10);
 	while (ft_isdigit((int)*str))
 	{
 		if (nbr > cutoff || (nbr == cutoff && (int)(*str - '0') > cutlim))
@@ -40,7 +37,7 @@ static long	ps_atol(const char *str, t_data *data)
 		nbr += (*str - '0');
 		str++;
 	}
-	return ((long []){nbr, -nbr}[isneg]);
+	return ((int []){nbr, -nbr}[isneg]);
 }
 
 /**
@@ -57,7 +54,7 @@ static int	conv_atoi(const char *str, t_data *data)
 
 	if (!charsetstr_strict((const char *)str, "1234567890-"))
 		ps_exit_prog(EXIT_FAILURE, data, "!isnum\n");
-	nb = ps_atol(str, data);
+	nb = ps_atoi(str, data);
 	return ((int)nb);
 }
 
