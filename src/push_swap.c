@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 18:09:37 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 15:41:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 
 /**
  * @brief Count word in `str`.
- * 
- * @param str
- * @param c
- * @return size_t
  */
 static size_t	word_count(const char *str, char c)
 {
@@ -45,6 +41,9 @@ static size_t	word_count(const char *str, char c)
 	return (size);
 }
 
+/**
+ * @brief Call ft_split(); and check if alloc dont fail
+ */
 static const char	**arg_split(const char *arg)
 {
 	const char	**ret;

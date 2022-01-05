@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:01:36 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 15:34:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 16:17:11 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @brief Conv char to int.
+ *        Skip white space character.
+ *        Check if we will never exceed `INT_(MAX/MIN)`.
+ */
 static long	ps_atoi(const char *str, t_data *data)
 {
 	unsigned long	nbr;
