@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_stack.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:17:57 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 20:27:39 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/05 20:09:33 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/05 20:24:38 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PS_STACK_H
+# define PS_STACK_H
 
 # include "ps_struct.h"
-# include "libft.h"
-# include "ps_parser.h"
-# include "ps_exit_prog.h"
-# include "ps_solve_set.h"
-# include "ps_stack.h"
-# include "ps_stack.h"
+
+void	ps_stack_init(t_data *data);
 
 #endif

@@ -6,15 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 19:46:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 20:28:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ps_parser.h"
-#include "ps_exit_prog.h"
 #include <stdlib.h>
-#include "libft.h"
 
 #include <stdio.h>//TODO REMOVE
 //TODO REMOVE
@@ -74,6 +71,9 @@ int	main(int ac, const char **av)
 	}
 	else
 		ps_exit_prog(EXIT_FAILURE, NULL, "Bad ac amount\n");
+	ps_solve_set(&data);
+	ps_stack_init(&data);
+	// ps_stack_solve(&data);
 	ps_exit_prog(EXIT_SUCCESS, &data, NULL);
 	return (0);
 }

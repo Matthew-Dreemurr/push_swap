@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:07:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 19:32:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 20:22:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ static void	debug_print_tab(t_data *data)
 void	ps_arg_init(int ac, const char **arg, t_data *data)
 {
 	data->size = ac;
-	data->set = malloc(sizeof(int) * data->size);
+	data->set = ft_calloc(data->size, sizeof(int));
 	if (!data->set)
 		ps_exit_prog(EXIT_FAILURE, data, "Fail malloc data->set\n");
-	ft_bzero(data->set, sizeof(int) * data->size);
 	ps_arg_check(arg, data);
 	debug_print_tab(data);
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 19:42:59 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 20:38:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ DONE
 DONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 **/
 
+static void	ps_free_check(void	*ptr)
+{
+	if (ptr)
+		free(ptr);
+}
+
 /**
  * @brief All tab of tmp are alloc in ft_split.
  *        ft_split guarantee that all tab are set to NULL adress
@@ -41,16 +47,20 @@ static void	ps_free_data_tmp(char **ptr, int size)
 	start = ptr;
 	while (size && ptr)
 	{
-		free(*ptr);
+		ps_free_check(*ptr);
 		ptr++;
 		size--;
 	}
-	free(start);
+	ps_free_check(start);
 }
 
 void	ps_prog_free(t_data *data)
 {
-	ps_free_data_tmp((char **)data->tmp, data->size);
-	free(data->set);
+	if (data->tmp)
+		ps_free_data_tmp((char **)data->tmp, data->size);
+	if (data->set)
+		ps_free_check(data->set);
+	if (data->stack)
+		ps_free_check(data->stack);
 	(void)data;
 }
