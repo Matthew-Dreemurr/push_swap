@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 20:28:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 20:43:45 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,20 @@ static const char	**arg_split(const char *arg)
 	return (ret);
 }
 
+static void	init_data_var(t_data *data)
+{
+	data->set = NULL;
+	data->solve = NULL;
+	data->stack = NULL;
+	data->tmp = NULL;
+}
+
 int	main(int ac, const char **av)
 {
 	t_data	data;
 
 	setbuf(stdout, NULL);//TODO REMOVE
-	data.tmp = NULL;
+	init_data_var(&data);
 	if (ac > 2)
 		ps_arg_init(--ac, ++av, &data);
 	else if (ac == 2)
