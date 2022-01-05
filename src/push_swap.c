@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 15:41:51 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 19:46:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #include "libft.h"
 
 #include <stdio.h>//TODO REMOVE
+//TODO REMOVE
+#ifdef WRA
+# include "wraloc.h"
+#endif
 
 /**
  * @brief Count word in `str`.
@@ -70,5 +74,6 @@ int	main(int ac, const char **av)
 	}
 	else
 		ps_exit_prog(EXIT_FAILURE, NULL, "Bad ac amount\n");
+	ps_exit_prog(EXIT_SUCCESS, &data, NULL);
 	return (0);
 }

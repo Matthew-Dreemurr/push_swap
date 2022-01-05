@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:08:14 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 15:54:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 19:32:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
+
+//TODO REMOVE
+#ifdef WRA
+# include "wraloc.h"
+#endif
 
 /**
  * @brief 

@@ -6,12 +6,17 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 16:04:09 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 19:42:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_exit_prog.h"
 #include <stdlib.h>
+
+//TODO REMOVE
+#ifdef WRA
+# include "wraloc.h"
+#endif
 
 /**
 DONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -31,15 +36,21 @@ DONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  */
 static void	ps_free_data_tmp(char **ptr, int size)
 {
-	while (size-- && *ptr)
+	void	*start;
+
+	start = ptr;
+	while (size && ptr)
 	{
 		free(*ptr);
 		ptr++;
+		size--;
 	}
+	free(start);
 }
 
 void	ps_prog_free(t_data *data)
 {
 	ps_free_data_tmp((char **)data->tmp, data->size);
+	free(data->set);
 	(void)data;
 }

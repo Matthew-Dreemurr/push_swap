@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2022/01/04 15:56:31 by mahadad          ###   ########.fr        #
+#    Updated: 2022/01/05 19:37:37 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SANI = 0
 WRA = 0
 
 ifeq ($(WRA), 1)
-WRA = 0
 INCLUDES += -I includes/debug
 CFLAGS += -D WRA
 endif

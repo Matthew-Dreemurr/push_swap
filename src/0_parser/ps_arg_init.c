@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:07:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/04 17:59:45 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 19:32:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <stdlib.h>
 #include "libft.h"
 
+//TODO REMOVE
+#ifdef WRA
+# include "wraloc.h"
+#endif
 #include <stdio.h>
 
 static void	debug_print_tab(t_data *data)

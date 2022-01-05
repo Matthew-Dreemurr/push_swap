@@ -6,13 +6,18 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:01:36 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 16:17:11 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 19:39:19 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_parser.h"
 #include "libft.h"
 #include <stdlib.h>
+
+//TODO REMOVE
+#ifdef WRA
+# include "wraloc.h"
+#endif
 
 /**
  * @brief Conv char to int.
