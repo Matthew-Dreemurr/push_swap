@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:01:36 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 15:17:14 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/05 15:34:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	conv_atoi(const char *str, t_data *data)
 	long	nb;
 
 	if (!charsetstr_strict((const char *)str, "1234567890-"))
-		ps_exit_prog(EXIT_FAILURE, data, "!isnum\n");
+		ps_exit_prog(EXIT_FAILURE, data, "!charsetstr_strict\n");
 	nb = ps_atoi(str, data);
 	return ((int)nb);
 }
@@ -66,11 +66,20 @@ static int	conv_atoi(const char *str, t_data *data)
 void	ps_arg_check(const char **av, t_data *data)
 {
 	int	i;
+	int	x;
 
 	i = 0;
 	while (i < data->size)
 	{
 		data->set[i] = conv_atoi(av[i], data);
+		x = 0;
+		while (x < i)
+		{
+			if (x != i)
+				if (data->set[i] == data->set[x])
+					ps_exit_prog(EXIT_FAILURE, data, "duplicate!\n");
+			x++;
+		}
 		i++;
 	}
 }
