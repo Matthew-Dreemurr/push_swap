@@ -16,19 +16,30 @@ This project involves sorting data on a stack, with a limited set of instruction
 ### How I manage and store the data ?
 
 ```c
- typedef struct s_data
+typedef struct s_stack
 {
-// [ a ] & [ b ]
-    int  *stack;
-// store data set convert to int
-    int  *set;
-// solved set
-    int  *solve;
-// Total length
-    int  len;
-// index of the first element in [ b ] 
-    int  sep;
-}               t_data;
+	//stack a
+	int		*a;
+	//stack b
+	int		*b;
+	//actual used space
+	int		len_a;
+	int		len_b;
+}				t_stack;
+
+typedef struct s_data
+{
+	//stack struct
+	t_stack	stack;
+	//array with all arg
+	int		*set;
+	//array with all the arg sovle
+	int		*solve;
+	//tmp ptr for special case
+	void	*tmp;
+	//copy of `ac` arg of main
+	int		ac;
+}				t_data;
 ```
 
 1. Store input
@@ -60,10 +71,68 @@ This project involves sorting data on a stack, with a limited set of instruction
     
     ### How  I sort data ?
     
+    ### The instructions :
+    
+    sa : swap a
+    
+    - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
+    
+    ```c
+     [ A ]  | [ A ]
+    .>[1]-. |  [2]
+    .-[2]<. |  [1]
+      [3]   |  [3]
+    ```
+    
+    sb : swap b
+    
+    - intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.
+    
+    ```c
+     [ B ]  | [ B ]
+    :>[A]-. |  [B]
+    .-[B]<: |  [A]
+      [C]   |  [C]
+    ```
+    
+    ss : sa et sb en même temps.
+    
+    ```c
+    [ A ]   [ B ]   |  [ A ]  [ B ]
+    :>[1]-. :>[A]-. |   [2]    [B]
+    .-[2]<: .-[B]<: |   [1]    [A]
+      [3]     [C]   |   [3]    [C]
+    ```
+    
+    pa : push a
+    
+    - prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
+    
+    pb : push b
+    
+    - prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
+    
+    ra : rotate a
+    
+    - décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
+    
+    rb : rotate b
+    
+    - décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.
+    
+    rr : ra et rb en même temps.
+    
+    rra : reverse rotate a
+    
+    - décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
+    
+    rrb : reverse rotate b
+    
+    - décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.
+    
+    rrr : rra et rrb en même temps.
+    
     ### How  I find instruction ?
-
-
-
 
 
 This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
