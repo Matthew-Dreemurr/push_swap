@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:01:36 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/05 19:39:19 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/06 16:15:04 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ps_arg_check(const char **av, t_data *data)
 	int	x;
 
 	i = 0;
-	while (i < data->size)
+	while (i < data->ac)
 	{
 		data->set[i] = conv_atoi(av[i], data);
 		x = 0;
