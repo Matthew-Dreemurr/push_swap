@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_solve_set.c                                     :+:      :+:    :+:   */
+/*   ps_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 20:06:37 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:42 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/07 15:24:12 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/07 16:05:41 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_solve_set.h"
 #include "ps_struct.h"
+#include "ps_instruction.h"
 
-void	ps_solve_set(t_data *data)//TODO implement hardcode solver for n <= 5
+/**
+ *   [ A ]   [ B ]  |  [ A ]  [ B ]
+ *  :>[1].: :>[A].: |   [2]    [B]
+ *  :.[2]<: :.[B]<: |   [1]    [A]
+ *    [3]     [C]   |   [3]    [C]
+ */
+void	ps_ss(t_data *data)
 {
-	if (data->a.len <= 5)
-		ps_litle_solver(data);
-	else
-		ps_big_solver(data);
+	ps_sa(data);
+	ps_sb(data);
 }

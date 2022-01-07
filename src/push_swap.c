@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/06 16:21:56 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 16:22:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ static void	init_data_var(t_data *data)
 	data->set = NULL;
 	data->solve = NULL;
 	data->tmp = NULL;
-	data->stack.a = NULL;
-	data->stack.b = NULL;
+	data->a.mem = NULL;
+	data->b.mem = NULL;
 	data->ac = 0;
-	data->stack.len_a = 0;
-	data->stack.len_b = 0;
+	data->a.len = 0;
+	data->b.len = 0;
 }
 
 int	main(int ac, const char **av)

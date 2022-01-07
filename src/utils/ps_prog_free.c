@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/06 16:27:43 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 16:22:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	ps_prog_free(t_data *data)
 		ps_free_data_tmp((char **)data->tmp, data->ac);
 	if (data->set)
 		ps_free_check(data->set);
-	if (data->stack.a)
-		ps_free_check(data->stack.a);
-	if (data->stack.b)
-		ps_free_check(data->stack.b);
+	if (data->a.mem)
+		ps_free_check(data->a.mem);
+	if (data->b.mem)
+		ps_free_check(data->b.mem);
 	(void)data;
 }

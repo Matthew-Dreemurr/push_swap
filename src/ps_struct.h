@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:21:48 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/06 16:18:42 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 16:21:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 
 typedef struct s_stack
 {
-	int		*a;
-	int		*b;
-	int		len_a;
-	int		len_b;
+	int		*mem;
+	int		len;
 }				t_stack;
 
 typedef struct s_data
 {
-	t_stack	stack;
+	t_stack	a;
+	t_stack	b;
 	int		*set;
 	int		*solve;
 	void	*tmp;

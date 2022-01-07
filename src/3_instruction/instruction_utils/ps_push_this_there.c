@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_solve_set.c                                     :+:      :+:    :+:   */
+/*   ps_push_this_there.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/05 20:06:37 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:42 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/07 16:29:46 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_solve_set.h"
+#include "ps_instruction.h"
 #include "ps_struct.h"
 
-void	ps_solve_set(t_data *data)//TODO implement hardcode solver for n <= 5
+/**
+ * @brief Will push the first element in the stack of `this` to `there`.
+ */
+void	ps_push_this_there(t_stack *this, t_stack *there)
 {
-	if (data->a.len <= 5)
-		ps_litle_solver(data);
-	else
-		ps_big_solver(data);
 }

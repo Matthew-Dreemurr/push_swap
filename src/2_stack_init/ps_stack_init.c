@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/06 16:38:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 16:22:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 static void	alloc_stack(t_data *data)
 {
-	data->stack.a = (int *)ft_calloc(data->ac, sizeof(int *));
-	if (!data->stack.a)
+	data->a.mem = (int *)ft_calloc(data->ac, sizeof(int *));
+	if (!data->a.mem)
 		ps_exit_prog(EXIT_FAILURE, data, "data->stack alloc fail!");
-	data->stack.b = (int *)ft_calloc(data->ac, sizeof(int *));
-	if (!data->stack.b)
+	data->b.mem = (int *)ft_calloc(data->ac, sizeof(int *));
+	if (!data->b.mem)
 		ps_exit_prog(EXIT_FAILURE, data, "data->stack alloc fail!");
 }
 
@@ -33,9 +33,9 @@ static void	populate_stack(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < data->stack.len_a)
+	while (i < data->a.len)
 	{
-		data->stack.a[i] = data->set[i];
+		data->a.mem[i] = data->set[i];
 		i++;
 	}
 }
@@ -45,12 +45,12 @@ static void	debug_stack(t_data *data)
 	printf("[ A ] [ B ]\n");
 	for (int i = 0; i < data->ac; i++)
 	{
-		if (i < data->stack.len_a)
-			printf("|%-2d", data->stack.a[i]);
+		if (i < data->a.len)
+			printf("|%-2d", data->a.mem[i]);
 		else
 			printf("  |\n");
-		if (i < data->stack.len_b)
-			printf("  |%-2d|\n", data->stack.b[i]);
+		if (i < data->b.len)
+			printf("  |%-2d|\n", data->b.mem[i]);
 		else
 			printf("  |\n");
 	}
@@ -58,7 +58,7 @@ static void	debug_stack(t_data *data)
 
 void	ps_stack_init(t_data *data)
 {
-	data->stack.len_a = data->ac;
+	data->a.len = data->ac;
 	alloc_stack(data);
 	populate_stack(data);
 	debug_stack(data);
