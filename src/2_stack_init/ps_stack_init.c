@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 17:12:01 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static void	populate_stack(t_data *data)
 	}
 }
 
+//TODO REMOVE
 static void	debug_stack(t_data *data)
 {
 	printf("[ A ] [ B ]\n");
