@@ -6,12 +6,14 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:21 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/07 16:39:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_exit_prog.h"
 #include <stdlib.h>
+#include "ps_struct.h"
+#include "ps_debug.h"
 
 //TODO REMOVE
 #ifdef WRA

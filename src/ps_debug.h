@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_exit_prog.h                                     :+:      :+:    :+:   */
+/*   ps_debug.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 17:03:21 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:39:11 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/07 16:36:43 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/07 16:37:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_EXIT_PROG_H
-# define PS_EXIT_PROG_H
+#ifndef PS_DEBUG_H
+# define PS_DEBUG_H
 
-void	ps_exit_prog(int ret, t_data *data, const char *debug);
-void	ps_prog_free(t_data *data);
+# ifndef PS_DEBUG
+#  define PS_DEBUG 0
+# endif
 
 #endif
