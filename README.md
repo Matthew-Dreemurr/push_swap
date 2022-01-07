@@ -73,14 +73,27 @@ typedef struct s_data
     
     ### The instructions :
     
+    - NB
+        
+        How to read arrow.
+        
+        ```c
+                   [Turn]-----:
+                   v          v
+        .----------:          :---> [End]
+        ^          |          |
+        [Start]    :----------:
+        ```
+        
+    
     sa : swap a
     
     - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.
     
     ```c
      [ A ]  | [ A ]
-    .>[1]-. |  [2]
-    .-[2]<. |  [1]
+    :>[1].: |  [2]
+    :.[2]<: |  [1]
       [3]   |  [3]
     ```
     
@@ -90,17 +103,17 @@ typedef struct s_data
     
     ```c
      [ B ]  | [ B ]
-    :>[A]-. |  [B]
-    .-[B]<: |  [A]
+    :>[A].: |  [B]
+    :.[B]<: |  [A]
       [C]   |  [C]
     ```
     
     ss : sa et sb en même temps.
     
     ```c
-    [ A ]   [ B ]   |  [ A ]  [ B ]
-    :>[1]-. :>[A]-. |   [2]    [B]
-    .-[2]<: .-[B]<: |   [1]    [A]
+     [ A ]   [ B ]  |  [ A ]  [ B ]
+    :>[1].: :>[A].: |   [2]    [B]
+    :.[2]<: :.[B]<: |   [1]    [A]
       [3]     [C]   |   [3]    [C]
     ```
     
@@ -108,31 +121,109 @@ typedef struct s_data
     
     - prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
     
+    ```c
+     [ A ]   [ B ]  |  [ A ]  [ B ]
+      [ ]<---.[A]   |   [A]    [B]
+      [ ]     [B]   |   [ ]    [C]
+      [ ]     [C]   |   [ ]    [ ]
+    ```
+    
     pb : push b
     
     - prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.
+    
+    ```c
+     [ A ]   [ B ]  |  [ A ]  [ B ]
+      [1].--->[ ]   |   [2]    [1]
+      [2]     [ ]   |   [3]    [ ]
+      [3]     [ ]   |   [ ]    [ ]
+    ```
     
     ra : rotate a
     
     - décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
     
+    ```c
+    [ A ]      |  [ A ]
+    :--.[1]<:  |   [2]
+    | :>[2].:  |   [3]
+    | :.[3]<:  |   [4]
+    | :>[4].:  |   [5]
+    | :.[5]<:  |   [6]
+    :-->[6].:  |   [1]
+    ```
+    
     rb : rotate b
     
     - décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.
     
+    ```c
+    [ B ]      |  [ B ]
+    :--.[A]<:  |   [B]
+    | :>[B].:  |   [C]
+    | :.[C]    |   [D]
+    :-->[D]    |   [A]
+        [ ]    |   [ ]
+        [ ]    |   [ ]
+    ```
+    
     rr : ra et rb en même temps.
+    
+    ```c
+       [ A ]      [ B ]   |  [ A ] [ B ]
+    :--.[1]<:  :--.[A]<:  |   [2]   [B]
+    | :>[2].:  | :>[B].:  |   [3]   [C]
+    | :.[3]<:  | :.[C]    |   [4]   [D]
+    | :>[4].:  :-->[D]    |   [5]   [A]
+    | :.[5]<:      [ ]    |   [6]   [ ]
+    :-->[6].:      [ ]    |   [1]   [ ]
+    ```
     
     rra : reverse rotate a
     
     - décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier.
     
+    ```c
+       [ A ]   |  [ A ]
+    :-->[1].:  |   [6]
+    | :.[2]<:  |   [1]
+    | :>[3].:  |   [2]
+    | :.[4]<:  |   [3]
+    | :>[5].:  |   [4]
+    :--.[6]<:  |   [5]
+    ```
+    
     rrb : reverse rotate b
     
     - décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.
     
+    ```c
+       [ B ]   |  [ B ]
+    :-->[A].:  |   [D]
+    | :.[B]<:  |   [A]
+    | :>[C]    |   [B]
+    :--.[D]    |   [C]
+        [ ]    |   [ ]
+        [ ]    |   [ ]
+    ```
+    
     rrr : rra et rrb en même temps.
     
+    ```c
+       [ A ]      [ B ]   |  [ A ] [ B ]
+    :-->[1].:  :-->[A].:  |   [6]   [D]
+    | :.[2]<:  | :.[B]<:  |   [1]   [A]
+    | :>[3].:  | :>[C]    |   [2]   [B]
+    | :.[4]<:  :--.[D]    |   [3]   [C]
+    | :>[5].:      [ ]    |   [4]   [ ]
+    :--.[6]<:      [ ]    |   [5]   [ ]
+    ```
+    
     ### How  I find instruction ?
+
+
+
+
 
 
 This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
