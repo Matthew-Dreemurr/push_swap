@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 11:58:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	main(int ac, const char **av)
 		ps_exit_prog(EXIT_FAILURE, NULL, "Bad ac amount\n");
 	ps_solve_set(&data);
 	ps_stack_init(&data);
-	// ps_stack_solve(&data);
+	ps_stack_solve(&data);
 	ps_exit_prog(EXIT_SUCCESS, &data, NULL);
 	return (0);
 }

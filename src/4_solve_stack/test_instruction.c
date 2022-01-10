@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   test_instruction.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 16:17:57 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 12:03:39 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/10 12:04:15 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "ps_instruction.h"
+#include "ps_solve_stack.h"
 
-# include "ps_struct.h"
-# include "libft.h"
-# include "ps_parser.h"
-# include "ps_exit_prog.h"
-# include "ps_solve_set.h"
-# include "ps_stack.h"
-# include "ps_stack.h"
-# include "ps_solve_stack.h"
-
-#endif
+void	ps_stack_solve(t_data *data)
+{
+	ps_push_this_there(&data->a, &data->b);
+}
