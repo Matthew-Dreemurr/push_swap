@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 13:06:01 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 13:13:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,13 @@ static void	there_init(t_stack *there)
 {
 	int	i;
 
-	i = there->len - 1;
+	i = there->len;
 	while (i > 0)
 	{
 		there->mem[i] = there->mem[i - 1];
 		i--;
 	}
+	there->len++;
 }
 
 /**
@@ -102,7 +103,7 @@ void	ps_push_this_there(t_stack *this, t_stack *there)
 		there_init(there);
 	debug_stack(this, there);//TODO REMOVE
 	there->mem[0] = this->mem[0];
-	there->len++;
+	debug_stack(this, there);//TODO REMOVE
 	if (!check(this->len))
 		this_clear(this);//TODO WIP
 	debug_stack(this, there);//TODO REMOVE
