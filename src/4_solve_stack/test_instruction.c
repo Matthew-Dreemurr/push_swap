@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 16:06:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 16:36:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,7 @@ static void	debug_stack(t_data *data)
 
 void	ps_stack_solve(t_data *data)
 {
-	ps_pb(data);debug_stack(data);
-	ps_pb(data);debug_stack(data);
-	ps_pa(data);debug_stack(data);
-	ps_pa(data);debug_stack(data);
-	ps_pa(data);debug_stack(data);
-	ps_sa(data);debug_stack(data);
-	ps_sa(data);debug_stack(data);
-	ps_sb(data);debug_stack(data);
-	ps_sb(data);debug_stack(data);
-	ps_ss(data);debug_stack(data);
-	ps_ss(data);debug_stack(data);
+	ps_ra(data);debug_stack(data);
+	ps_ra(data);debug_stack(data);
+	ps_ra(data);debug_stack(data);
 }
