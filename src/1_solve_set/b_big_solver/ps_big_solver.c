@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:44:34 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 15:20:47 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 11:48:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 
 void	ps_big_solver(t_data *data)//TODO
 {
+	(void)data;
 }

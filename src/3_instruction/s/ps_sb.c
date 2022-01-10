@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:24:12 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:21 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 11:52:32 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@
  */
 void	ps_sb(t_data *data)
 {
-	ps_swap_this_w_that(data->b.mem[0], data->b.mem[1]);
+	ps_swap_this_w_that(&data->b.mem[0], &data->b.mem[1]);
 }

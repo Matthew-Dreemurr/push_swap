@@ -6,11 +6,10 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:24:12 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:22:15 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 11:52:23 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_struct.h"
 #include "ps_instruction.h"
 
 /**
@@ -21,5 +20,5 @@
  */
 void	ps_sa(t_data *data)
 {
-	ps_swap_this_w_that(data->a.mem[0], data->a.mem[1]);
+	ps_swap_this_w_that(&data->a.mem[0], &data->a.mem[1]);
 }
