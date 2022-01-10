@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 13:13:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 16:00:53 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,33 @@
 #include "libft.h"
 
 //TODO REMOVE
+/*
 #include "stdio.h"
-static void	debug_stack(t_stack *a, t_stack *b)
+static void	ps_debug_stack(t_stack *a, t_stack *b)
 {
+	int pad = 3;
+
 	printf("[ %d ] [ %d ]\n", a->len, b->len);
 	for (int i = 0; i < ((a->len > b->len) ? a->len : b->len); i++)
 	{
 		if (i < a->len)
-			printf("|%-4d", a->mem[i]);
+			printf("|%-*d", pad, a->mem[i]);
 		else
-			printf("|    ");
+			printf("|%*s", pad, "");
 		if (i < b->len)
-			printf("|%-4d|\n", b->mem[i]);
+			printf("|%-*d|\n", pad, b->mem[i]);
 		else
-			printf("|    |\n");
+			printf("|%*s\n", pad, "");
 	}
+	printf("\n");
 }
+*/
 
 static int	check(int len)
 {
 	if (!len)
 		if (PS_DEBUG)
-			ft_putstr("ps_push_this_there() [PA]: [this] is empty!\n");
+			ft_putstr("ps_push_this_there(): [this] is empty!\n");
 	return (len);
 }
 
@@ -54,7 +59,6 @@ static void	there_init(t_stack *there)
 		there->mem[i] = there->mem[i - 1];
 		i--;
 	}
-	there->len++;
 }
 
 /**
@@ -62,7 +66,15 @@ static void	there_init(t_stack *there)
  */
 static void	this_clear(t_stack *this)
 {
-	(void)this;
+	int	i;
+
+	i = 0;
+	this->len--;
+	while (i < this->len)
+	{
+		this->mem[i] = this->mem[i + 1];
+		i++;
+	}
 }
 
 /**
@@ -87,24 +99,16 @@ static void	this_clear(t_stack *this)
  */
 void	ps_push_this_there(t_stack *this, t_stack *there)
 {
-	int	i;
-
-	i = 0;
-
-
-	there->len = 2;
-	there->mem[0] = 22;
-	there->mem[1] = 44;
-
 	if (!check(this->len))
 		return ;
-	debug_stack(this, there);//TODO REMOVE
+	// ps_debug_stack(this, there);//TODO REMOVE
 	if (there->len)
 		there_init(there);
-	debug_stack(this, there);//TODO REMOVE
+	// ps_debug_stack(this, there);//TODO REMOVE
 	there->mem[0] = this->mem[0];
-	debug_stack(this, there);//TODO REMOVE
-	if (!check(this->len))
-		this_clear(this);//TODO WIP
-	debug_stack(this, there);//TODO REMOVE
+	there->len++;
+	// ps_debug_stack(this, there);//TODO REMOVE
+	if (check(this->len))
+		this_clear(this);
+	// ps_debug_stack(this, there);//TODO REMOVE
 }

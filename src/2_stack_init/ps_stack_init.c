@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 13:08:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 15:56:46 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,28 @@
 #include "libft.h"
 
 //TODO REMOVE
+/*
+*/
 #include <stdio.h>
+static void	debug_stack(t_data *data)
+{
+	printf("[ A ] [ B ]\n");
+	for (int i = 0; i < data->ac; i++)
+	{
+		if (i < data->a.len)
+			printf("|%-4d", data->a.mem[i]);
+		else
+			printf("|    ");
+		if (i < data->b.len)
+			printf("|%-4d|\n", data->b.mem[i]);
+		else
+			printf("|    |\n");
+	}
+}
 
+/**
+ * @brief alloc stack `a` 'n `b`
+ */
 static void	alloc_stack(t_data *data)
 {
 	data->a.mem = (int *)ft_calloc(data->ac, sizeof(int *));
@@ -40,28 +60,10 @@ static void	populate_stack(t_data *data)
 	}
 }
 
-//TODO REMOVE
-/*
-static void	debug_stack(t_data *data)
-{
-	printf("[ A ] [ B ]\n");
-	for (int i = 0; i < data->ac; i++)
-	{
-		if (i < data->a.len)
-			printf("|%-4d", data->a.mem[i]);
-		else
-			printf("|    ");
-		if (i < data->b.len)
-			printf("|%-4d|\n", data->b.mem[i]);
-		else
-			printf("|    |\n");
-	}
-}
-*/
 void	ps_stack_init(t_data *data)
 {
 	data->a.len = data->ac;
 	alloc_stack(data);
 	populate_stack(data);
-	// debug_stack(data);//TODO
+	debug_stack(data);//TODO
 }
