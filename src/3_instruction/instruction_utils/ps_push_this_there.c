@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 11:51:57 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 13:06:01 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 #include "stdio.h"
 static void	debug_stack(t_stack *a, t_stack *b)
 {
-	printf("[ ? ] [ ? ]\n");
-	for (int i = 0; i < (a->len + b->len); i++)
+	printf("[ %d ] [ %d ]\n", a->len, b->len);
+	for (int i = 0; i < ((a->len > b->len) ? a->len : b->len); i++)
 	{
 		if (i < a->len)
-			printf("|%-2d", a->mem[i]);
+			printf("|%-4d", a->mem[i]);
 		else
-			printf("  |\n");
+			printf("|    ");
 		if (i < b->len)
-			printf("  |%-2d|\n", b->mem[i]);
+			printf("|%-4d|\n", b->mem[i]);
 		else
-			printf("  |\n");
+			printf("|    |\n");
 	}
 }
 
@@ -49,8 +49,11 @@ static void	there_init(t_stack *there)
 	int	i;
 
 	i = there->len - 1;
-	while (i-- > 0)
+	while (i > 0)
+	{
 		there->mem[i] = there->mem[i - 1];
+		i--;
+	}
 }
 
 /**
@@ -58,9 +61,7 @@ static void	there_init(t_stack *there)
  */
 static void	this_clear(t_stack *this)
 {
-	if (!check(this->len))
-		return ;
-	//TODO WIP
+	(void)this;
 }
 
 /**
@@ -88,6 +89,12 @@ void	ps_push_this_there(t_stack *this, t_stack *there)
 	int	i;
 
 	i = 0;
+
+
+	there->len = 2;
+	there->mem[0] = 22;
+	there->mem[1] = 44;
+
 	if (!check(this->len))
 		return ;
 	debug_stack(this, there);//TODO REMOVE
@@ -95,5 +102,8 @@ void	ps_push_this_there(t_stack *this, t_stack *there)
 		there_init(there);
 	debug_stack(this, there);//TODO REMOVE
 	there->mem[0] = this->mem[0];
-	this_clear(this);//TODO WIP
+	there->len++;
+	if (!check(this->len))
+		this_clear(this);//TODO WIP
+	debug_stack(this, there);//TODO REMOVE
 }

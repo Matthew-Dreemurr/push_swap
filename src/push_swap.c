@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 11:58:55 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 12:37:46 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	main(int ac, const char **av)
 	{
 		data.tmp = arg_split(*(++av));
 		ps_arg_init(word_count(*av, ' '), (const char **)data.tmp, &data);
-		ps_exit_prog(EXIT_SUCCESS, &data, NULL);
 	}
 	else
 		ps_exit_prog(EXIT_FAILURE, NULL, "Bad ac amount\n");

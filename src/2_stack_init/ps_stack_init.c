@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 17:12:01 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/10 13:03:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ static void	debug_stack(t_data *data)
 	for (int i = 0; i < data->ac; i++)
 	{
 		if (i < data->a.len)
-			printf("|%-2d", data->a.mem[i]);
+			printf("|%-4d", data->a.mem[i]);
 		else
-			printf("  |\n");
+			printf("|    ");
 		if (i < data->b.len)
-			printf("  |%-2d|\n", data->b.mem[i]);
+			printf("|%-4d|\n", data->b.mem[i]);
 		else
-			printf("  |\n");
+			printf("|    |\n");
 	}
 }
 
