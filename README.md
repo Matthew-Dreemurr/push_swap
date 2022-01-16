@@ -18,28 +18,19 @@ This project involves sorting data on a stack, with a limited set of instruction
 ```c
 typedef struct s_stack
 {
-	//stack a
-	int		*a;
-	//stack b
-	int		*b;
-	//actual used space
-	int		len_a;
-	int		len_b;
-}				t_stack;
+    int     *mem;
+    int     len;
+}               t_stack;
 
 typedef struct s_data
 {
-	//stack struct
-	t_stack	stack;
-	//array with all arg
-	int		*set;
-	//array with all the arg sovle
-	int		*solve;
-	//tmp ptr for special case
-	void	*tmp;
-	//copy of `ac` arg of main
-	int		ac;
-}				t_data;
+    t_stack a;
+    t_stack b;
+    int     *set;
+    int     *solve;
+    void    *tmp;
+    int     ac;
+}               t_data;
 ```
 
 1. Store input
@@ -52,11 +43,8 @@ typedef struct s_data
     2. use sort algorithms depend the case
     3. solve `struct.solve`
 3. Init stack `a` `b`
-    1. `struct.stack` alloc sizeof(int) * (av * 2)
-    2. use `struct.solve` index to hash `struct.set` in `a`
-    3. `struct.sep` = first index of `b`
-    4. `struct.len` = `av`
-    
+    1. use `struct.solve` index to hash `struct.set` in `a`
+
     ```jsx
     struct.set    [12][4][-4][12312][-44444]
     
@@ -65,8 +53,7 @@ typedef struct s_data
     
     struct.stack  [3][2][1][4][0] [ ][ ][ ][ ][ ]
                    ^-----------^   ^-----------^
-                       [ a ]       |     [ b ]
-                                [ Sep ]
+                       [ a ]           [ b ]
     ```
     
     ### How  I sort data ?
