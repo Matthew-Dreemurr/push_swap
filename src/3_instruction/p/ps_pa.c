@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:03:56 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 16:00:03 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/18 16:45:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 void	ps_pa(t_data *data)
 {
-	if (PS_DEBUG)
-		ft_putstr("===[ PA ]===\n");
-	ps_push_this_there(&data->b, &data->a);
+	if (ps_push_this_there(&data->b, &data->a))
+		ft_putstr("pa\n");
+	else if (PS_DEBUG)
+		ft_putstr("==] Fail pa ! [==\n");
 }

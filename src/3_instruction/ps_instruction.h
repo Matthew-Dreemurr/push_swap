@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:56:53 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 17:09:42 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/18 17:03:13 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ps_rb(t_data *data);
 void	ps_rr(t_data *data);
 
 void	ps_swap_this_w_that(int *this, int *that);
-void	ps_push_this_there(t_stack	*this, t_stack	*there);
-void	ps_rotate_up_stack(t_stack *stack);
+int		ps_push_this_there(t_stack	*this, t_stack	*there);
+int		ps_rotate_up_stack(t_stack *stack);
+int		ps_push_all_this_there(t_stack *this, t_stack *there);
 
 #endif

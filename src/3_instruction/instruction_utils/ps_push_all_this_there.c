@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_rr.c                                            :+:      :+:    :+:   */
+/*   ps_push_all_this_there.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 17:08:45 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/18 16:46:35 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/18 16:27:15 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/18 17:32:30 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps_instruction.h"
+#include "ps_struct.h"
 #include "ps_debug.h"
 
-void	ps_rr(t_data *data)
+/**
+ * @brief Will push all `this` in `there`.
+ *        If !`this`.len then return 0.
+ */
+int	ps_push_all_this_there(t_stack *this, t_stack *there)
 {
-	if (ps_rotate_up_stack(&data->a) || ps_rotate_up_stack(&data->b))
-		ft_putstr("rr\n");
-	else if (PS_DEBUG)
-		ft_putstr("==] Fail rr ! [==\n");
+	if (!this->len)
+	{
+		if (PS_DEBUG)
+			ft_putstr("ps_push_all_this_there(): [this] is empty!\n");
+		return (0);
+	}
+	while (this->len)
+		ps_push_this_there(this, there);
+	return (1);
 }

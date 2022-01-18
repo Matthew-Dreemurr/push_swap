@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 16:28:13 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 17:06:39 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/18 16:46:46 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void	ps_ra(t_data *data)
 {
-	if (PS_DEBUG)
-		ft_putstr("===[ RA ]===\n");
-	ps_rotate_up_stack(&data->a);
+	if (ps_rotate_up_stack(&data->a))
+		ft_putstr("ra\n");
+	else if (PS_DEBUG)
+		ft_putstr("==] Fail ra ! [==\n");
 }

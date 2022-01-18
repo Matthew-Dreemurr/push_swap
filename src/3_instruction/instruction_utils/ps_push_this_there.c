@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 16:28:10 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/18 16:34:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ static void	this_clear(t_stack *this)
  * @brief Will push the first element in the stack of `this` to `there`.
  *        Check `this->len` if the stack `this` is not empty.
  */
-void	ps_push_this_there(t_stack *this, t_stack *there)
+int	ps_push_this_there(t_stack *this, t_stack *there)
 {
 	if (!check(this->len))
-		return ;
+		return (0);
 	// ps_debug_stack(this, there);//TODO REMOVE
 	if (there->len)
 		there_init(there);
@@ -111,4 +111,5 @@ void	ps_push_this_there(t_stack *this, t_stack *there)
 		this_clear(this);
 	this->len--;
 	// ps_debug_stack(this, there);//TODO REMOVE
+	return (1);
 }

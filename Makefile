@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2022/01/05 19:37:37 by mahadad          ###   ########.fr        #
+#    Updated: 2022/01/18 16:53:11 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,11 +109,15 @@ re: fclean all
 h:
 	@echo "\033[1J"
 
-c: clean
-
-fc: fclean
-
-r: re
+c:
+	@rm -rf $(OBJS)
+	@printf "\033[31;1m[Remove *.o]\033[32;0m\n"
+	@rm -rf $(OBJ_DIR)
+	@printf "\033[31;1m[Remove $(OBJ_DIR)]\033[32;0m\n"
+fc: c
+	@rm -f $(NAME)
+	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
+r: fc all
 
 git:
 	@git pull
