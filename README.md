@@ -224,7 +224,7 @@ I will use ardcode sort for the set that dont exceed 5 number.
 
 For the biger set i will use [[Radix]] with [[Bitwise Operators]].
 
-The way i manage the bitwise:
+The way i manage the bitwise to acces eatch bit:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
