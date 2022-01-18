@@ -220,7 +220,7 @@ typedef struct s_data
     ```
 
 ### Sort methode 
-I will use ardcode sort for the number that dont exceed 5 number.
+I will use ardcode sort for the set that dont exceed 5 number.
 
 For the biger set i will use [[Radix]] with [[Bitwise Operators]].
 
