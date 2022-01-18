@@ -11,6 +11,8 @@ This project involves sorting data on a stack, with a limited set of instruction
 
 
 
+# Push swap
+
 ## The logic
 
 ### How I manage and store the data ?
@@ -18,19 +20,28 @@ This project involves sorting data on a stack, with a limited set of instruction
 ```c
 typedef struct s_stack
 {
-    int     *mem;
-    int     len;
-}               t_stack;
+	//stack a
+	int		*a;
+	//stack b
+	int		*b;
+	//actual used space
+	int		len_a;
+	int		len_b;
+}				t_stack;
 
 typedef struct s_data
 {
-    t_stack a;
-    t_stack b;
-    int     *set;
-    int     *solve;
-    void    *tmp;
-    int     ac;
-}               t_data;
+	//stack struct
+	t_stack	stack;
+	//array with all arg
+	int		*set;
+	//array with all the arg sovle
+	int		*solve;
+	//tmp ptr for special case
+	void	*tmp;
+	//copy of `ac` arg of main
+	int		ac;
+}				t_data;
 ```
 
 1. Store input
@@ -43,8 +54,11 @@ typedef struct s_data
     2. use sort algorithms depend the case
     3. solve `struct.solve`
 3. Init stack `a` `b`
-    1. use `struct.solve` index to hash `struct.set` in `a`
-
+    1. `struct.stack` alloc sizeof(int) * (av * 2)
+    2. use `struct.solve` index to hash `struct.set` in `a`
+    3. `struct.sep` = first index of `b`
+    4. `struct.len` = `av`
+    
     ```jsx
     struct.set    [12][4][-4][12312][-44444]
     
@@ -53,7 +67,8 @@ typedef struct s_data
     
     struct.stack  [3][2][1][4][0] [ ][ ][ ][ ][ ]
                    ^-----------^   ^-----------^
-                       [ a ]           [ b ]
+                       [ a ]       |     [ b ]
+                                [ Sep ]
     ```
     
     ### How  I sort data ?
@@ -205,9 +220,37 @@ typedef struct s_data
     | :>[5].:      [ ]    |   [4]   [ ]
     :--.[6]<:      [ ]    |   [5]   [ ]
     ```
-    
-    ### How  I find instruction ?
 
+### Sort methode 
+I will use ardcode sort for the number that dont exceed 5 number.
+
+For the biger set i will use [[Radix]] with [[Bitwise Operators]].
+
+The way i manage the bitwise:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i = 2147483647;
+
+    printf("Size of int: %ld bit\n", sizeof(int) * 8); // Size of int in bit
+    for(int y = 0; y < (sizeof(int) * 8); y++)
+        printf("%d", 1&(i>>y)); // Skip bit and compare with 1
+                                // The `&` operator will be true only if the two
+                                // bit compare is 1.
+                                // 1 in binary is 0001
+                                // So all the digit exept the last will be false
+    return 0;
+}
+
+Output:
+Size of int: 32 bit
+11111111111111111111111111111110
+```
+
+### How I find instruction ?
 
 
 
