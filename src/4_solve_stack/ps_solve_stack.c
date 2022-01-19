@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 14:06:54 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 17:30:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,13 @@ static void	debug_stack(t_data *data)
 
 void	ps_stack_solve(t_data *data)
 {
-	//TODO make a set indexing and check the biggest numbre to avoid check all 32 bits
-	//TODO
-	//TODO int	ps_max_bit_size();
-	//TODO   while
-	//TODO     if 1&(nb<<bit) is true
-	//TODO      then tmp = bit
-	//TODO     bit++
-	//TODO   return tmp
-	/**
-	int	i;
-	int	x;
-	int	int_bits;
-
-	i = 0;
-	x = 0;
-	int_bits = (int)(sizeof(int) * 8);
-	while (i < int_bits)
-	{
-		printf("check bit [%d]\n", i);
-		while (x < data->ac)
-		{
-			if (!ps_get_bit(data->a.mem[0], i))
-				ps_pb(data);
-			else
-				ps_ra(data);
-			x++;
-		}
-		ps_ppa(data);
-		i++;
-		x = 0;
-	}
-	**/
+	//TODO 
+	//TODO 
+	//TODO La stack `a` contiend mtn les hash des nombre
+	//TODO Trouver une logique pour générer les instruction
+	//TODO Check -> https://discord.com/channels/@me/927974007058337843/927980541960134716
+	//TODO Push le premier `a`, chercher son suivent 
+	//TODO 
+	//TODO 
 	debug_stack(data);
 }
