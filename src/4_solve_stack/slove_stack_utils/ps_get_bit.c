@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_pb.c                                            :+:      :+:    :+:   */
+/*   ps_get_bit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 16:03:56 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 12:38:47 by mahadad          ###   ########.fr       */
+/*   Created: 2022/01/19 12:28:52 by mahadad           #+#    #+#             */
+/*   Updated: 2022/01/19 12:31:34 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_struct.h"
-#include "ps_instruction.h"
-#include "libft.h"
-#include "ps_debug.h"
+#include "ps_solve_stack.h"
 
-/**
- * @brief Push `a` to `b`
- */
-void	ps_pb(t_data *data)
+int	ps_get_bit(int nb, int bit)
 {
-	if (ps_push_this_there(&data->a, &data->b))
-		ft_putstr("pb\n");
-	else if (PS_DEBUG)
-		ft_putstr("==] Fail pa ! [==\n");
+	return (1 & (nb >> bit));
 }

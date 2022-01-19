@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 15:56:46 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 14:10:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,11 @@ static void	populate_stack(t_data *data)
 	}
 }
 
+//TODO use data->solve to store the indxe of all number.
 void	ps_stack_init(t_data *data)
 {
 	data->a.len = data->ac;
 	alloc_stack(data);
 	populate_stack(data);
-	debug_stack(data);//TODO
+	debug_stack(data);//TODO REMOVE
 }

@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:59:17 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 12:01:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 12:32:19 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include "ps_struct.h"
 
 void	ps_stack_solve(t_data *data);
+int	ps_get_bit(int nb, int bit);
 
 #endif
