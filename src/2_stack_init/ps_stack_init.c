@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 14:10:39 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 17:10:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ps_exit_prog.h"
 #include "stdlib.h"
 #include "libft.h"
+#include "ps_debug.h"
 
 //TODO REMOVE
 /*
@@ -48,6 +49,22 @@ static void	alloc_stack(t_data *data)
 		ps_exit_prog(EXIT_FAILURE, data, "data->stack alloc fail!");
 }
 
+static int	find_index(t_data *data, int nb)
+{
+	int	index;
+
+	index = 0;
+	while (index < data->ac)
+	{
+		if (data->solve[index] == nb)
+			return (index);
+		index++;
+	}
+	if (PS_DEBUG)
+		ft_putstr("find_index(): Dont find the `nb` in index ?!\n");
+	return (-1);
+}
+
 static void	populate_stack(t_data *data)
 {
 	int	i;
@@ -55,7 +72,7 @@ static void	populate_stack(t_data *data)
 	i = 0;
 	while (i < data->a.len)
 	{
-		data->a.mem[i] = data->set[i];
+		data->a.mem[i] = find_index(data, data->set[i]);
 		i++;
 	}
 }
