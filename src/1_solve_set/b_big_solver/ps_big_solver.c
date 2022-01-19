@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:44:34 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 15:17:32 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 16:47:41 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,36 @@
 #include "ps_exit_prog.h"
 #include <stdlib.h>
 
-static void	init(t_data *data)
+//TODO REMOVE
+#include <stdio.h>
+/**
+**/
+static void	debug_print_tab(int *tab, int len)
 {
-	data->set = ft_calloc(data->ac, sizeof(int));
-	if (!data->set)
-		ps_exit_prog(EXIT_FAILURE, data, "Fail malloc data->set\n");
+	for (int i = 0; i < len; i++)
+		printf("%3d|[%d]\n", i, tab[i]);
 }
 
 void	ps_big_solver(t_data *data)//TODO
 {
-	int	index;
 	int	i;
+	int	x;
+	int	tmp;
 
 	i = 1;
-	index = 0;
-	while (index < data->ac)
+	while (i < data->ac)
 	{
-		while (i < index)
+		tmp = data->solve[i];
+		x = i - 1;
+		while (x >= 0 && data->solve[x] > tmp)
 		{
-			if (data->)
+			data->solve[x + 1] = data->solve[x];
+			x--;
 		}
-		
+		data->solve[x + 1] = tmp;
+		i++;
 	}
+	//TODO REMOTE
+	printf("Solve\n");
+	debug_print_tab(data->solve, data->ac);
 }

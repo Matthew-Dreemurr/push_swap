@@ -6,7 +6,7 @@
 #    By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 11:30:03 by mahadad           #+#    #+#              #
-#    Updated: 2022/01/18 16:53:11 by mahadad          ###   ########.fr        #
+#    Updated: 2022/01/19 16:42:47 by mahadad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,6 +118,10 @@ fc: c
 	@rm -f $(NAME)
 	@printf "\033[31;1m[Remove $(NAME)]\033[32;0m\n"
 r: fc all
+
+sub:
+	make SANI=$(SANI) WRA=$(WRA) -C $(dir $(DEP_LIBFT))
+
 
 git:
 	@git pull

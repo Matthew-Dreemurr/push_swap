@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 12:37:46 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 16:53:44 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ int	main(int ac, const char **av)
 	ps_solve_set(&data);
 	ps_stack_init(&data);
 	ps_stack_solve(&data);
-	ps_exit_prog(EXIT_SUCCESS, &data, NULL);
+	ps_exit_prog(EXIT_SUCCESS, &data, "Clean exit!\n");
 	return (0);
 }
