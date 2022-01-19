@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:06:37 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 16:47:20 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/19 16:59:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	init(t_data *data)
 
 void	ps_solve_set(t_data *data)//TODO implement hardcode solver for n <= 5
 {
-	init(data);
-	if (data->ac <= 5)
-		ps_litle_solver(data);
-	else
-		ps_big_solver(data);
+	init(data);               //TODO TODO 
+	if (data->ac <= 5)        //TODO TODO 
+		ps_big_solver(data);  //TODO TODO <<<------------- remove ps_big_solver and make litle_solver !!!
+	else                      //TODO TODO 
+		ps_big_solver(data);  //TODO TODO 
 }
