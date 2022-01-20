@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 13:19:07 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/07 16:39:30 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/20 17:56:21 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <stdlib.h>
 #include "ps_struct.h"
 #include "ps_debug.h"
-
-//TODO REMOVE
-#ifdef WRA
-# include "wraloc.h"
-#endif
 
 /**
 DONE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -60,11 +55,9 @@ void	ps_prog_free(t_data *data)
 {
 	if (data->tmp)
 		ps_free_data_tmp((char **)data->tmp, data->ac);
-	if (data->set)
-		ps_free_check(data->set);
-	if (data->a.mem)
-		ps_free_check(data->a.mem);
-	if (data->b.mem)
-		ps_free_check(data->b.mem);
+	ps_free_check(data->set);
+	ps_free_check(data->solve);
+	ps_free_check(data->a.mem);
+	ps_free_check(data->b.mem);
 	(void)data;
 }

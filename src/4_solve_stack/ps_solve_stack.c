@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 17:30:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/20 17:41:27 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
+	printf("Len stack a %d\n", data->a.len);
+	ps_pb(data);
+	printf("Len stack a %d\n", data->a.len);
 	debug_stack(data);
+	printf("[%d]\n", ps_check_stack_sort(&data->a));
 }
