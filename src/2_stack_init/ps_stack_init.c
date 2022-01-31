@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 17:10:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/31 19:25:10 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 //TODO REMOVE
 /*
-*/
 #include <stdio.h>
-static void	debug_stack(t_data *data)
+static void	//tmp//debug_stack(t_data *data)
 {
 	printf("[ A ] [ B ]\n");
 	for (int i = 0; i < data->ac; i++)
@@ -35,6 +34,7 @@ static void	debug_stack(t_data *data)
 			printf("|    |\n");
 	}
 }
+*/
 
 /**
  * @brief alloc stack `a` 'n `b`
@@ -83,5 +83,5 @@ void	ps_stack_init(t_data *data)
 	data->a.len = data->ac;
 	alloc_stack(data);
 	populate_stack(data);
-	debug_stack(data);//TODO REMOVE
+	//tmp//debug_stack(data);//TODO REMOVE
 }

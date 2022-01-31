@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/20 17:41:27 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/01/31 19:39:54 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,31 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
-	printf("Len stack a %d\n", data->a.len);
-	ps_pb(data);
-	ps_pb(data);
-	ps_pb(data);
-	printf("Len stack a %d\n", data->a.len);
+	
+	int	x;
+
 	debug_stack(data);
+	x = 0;
+	while (data->a.mem[0] != data->solve[(data->ac - 1)])
+	{
+		debug_stack(data);
+		ps_ra(data);
+		printf("%d\n\n",  data->solve[(data->ac - 1)]);//TODO WIP ./push_swap 3 2 5 
+		getchar();
+		// printf("\033[2J");
+	}
+	ps_pb(data);
+	while (data->a.len)
+	{
+		while (x < (data->a.len))
+		{
+			if ((data->b.mem[0] - 1) == data->a.mem[0])
+				ps_pb(data);
+			ps_ra(data);
+			x++;
+		}
+		x = 0;
+	}
+	//tmp//debug_stack(data);
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
 }
