@@ -45,6 +45,8 @@ void	ps_stack_solve(t_data *data)
 	//TODO 
 	printf("Len stack a %d\n", data->a.len);
 	ps_pb(data);
+	ps_pb(data);
+	ps_pb(data);
 	printf("Len stack a %d\n", data->a.len);
 	debug_stack(data);
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
