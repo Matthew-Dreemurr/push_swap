@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 16:23:48 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:28:31 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,26 @@ static void	debug_stack(t_data *data)
 	}
 }
 
+static void	find_biggest_nu(t_data *data)
+{
+	int	test;
+
+	test = ps_solve_stack_find_last(data);
+	if (test)
+	{
+		while (data->a.mem[0] != data->a.len - 1)
+		{
+			if (test == 1)
+				ps_rra(data);
+			else
+				ps_ra(data);
+			debug_stack(data);//TODO REMOVE DEBUG
+			getchar();
+			printf("\033[2J");
+		}
+	}
+}
+
 void	ps_stack_solve(t_data *data)
 {
 	//TODO 
@@ -44,13 +64,8 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
-	//TODO make rra rrb rrr !!!
-	int	x;
-
-	x = 0;
-	debug_stack(data);
-	printf("up or down ? [%d]\n", ps_solve_stack_find_last(data));
+	find_biggest_nu(data);
 	// ps_pb(data);
-	//tmp//debug_stack(data);
+	debug_stack(data);//TODO REMOVE DEBUG
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
 }
