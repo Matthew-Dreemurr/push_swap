@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 16:09:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 16:23:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,43 +44,13 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
-	
+	//TODO make rra rrb rrr !!!
 	int	x;
 
-
-	debug_stack(data);
-	while (1)
-	{
-		ps_pb(data);
-		debug_stack(data);
-		if (getchar() == 'q')
-			break;
-		printf("\033[2J");
-	}
-		while (1)
-	{
-		ps_rrb(data);
-		debug_stack(data);
-		if (getchar() == 'q')
-			break;
-		printf("\033[2J");
-	}
-	
-
 	x = 0;
-	ps_solve_stack_find_last(data);//TODO make rra rrb rrr !!!
-	ps_pb(data);
-	while (data->a.len)
-	{
-		while (x < (data->a.len))
-		{
-			if ((data->b.mem[0] - 1) == data->a.mem[0])
-				ps_pb(data);
-			ps_ra(data);
-			x++;
-		}
-		x = 0;
-	}
+	debug_stack(data);
+	printf("up or down ? [%d]\n", ps_solve_stack_find_last(data));
+	// ps_pb(data);
 	//tmp//debug_stack(data);
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
 }
