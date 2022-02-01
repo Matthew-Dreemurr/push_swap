@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:29:47 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:36:08 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
-	find_biggest_nu(data);
+	find_biggest_nu(data);//TODO TODO TODO trouver un moyen de ne pas devoir remonter le plus grand
+	                      //TODO TODO TODO   x = data->a.mem[0] 
+						  //                 while
+						  //                    if x > data->a.len
+						  //                        then x = 0;
 	// ps_pb(data);
 	debug_stack(data);//TODO REMOVE DEBUG
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
