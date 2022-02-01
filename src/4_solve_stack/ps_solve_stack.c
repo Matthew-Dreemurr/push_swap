@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:28:31 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:29:47 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ static void	find_biggest_nu(t_data *data)
 				ps_rra(data);
 			else
 				ps_ra(data);
-			debug_stack(data);//TODO REMOVE DEBUG
-			getchar();
-			printf("\033[2J");
+			// debug_stack(data);//TODO REMOVE DEBUG
+			// getchar();
+			// printf("\033[2J");
 		}
 	}
 }
