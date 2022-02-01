@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:38:22 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:43:35 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ void	ps_stack_solve(t_data *data)
 	//TODO Push le premier `a`, chercher son suivent 
 	//TODO 
 	//TODO 
-	find_biggest_nu(data);	//TODO TODO TODO trouver un moyen de ne pas devoir remonter le plus grand
+	find_biggest_nu(data);	//TODO /!\ !!!!!! Je ne suis pas sure du resonnement, je pense qu'on devra dans tout les cas remonter le premier donc autemp le faire tout de suite, verifier sur papier la logique.
+							//TODO On peut savoir le prochain index a chercher donc c'est innutile de voiloir push le plus grand index
+							//          Il suffit de push directe et de chercher son suivant, si le nombre est le plus grand (data->ac) on reset a 0 pour check ceux qui était en dessous.
+							//TODO TODO TODO trouver un moyen de ne pas devoir remonter le plus grand
 							//TODO TODO TODO   x = data->a.mem[0] 
 							//                 while
 							//                    if data->a.mem[0] == x
