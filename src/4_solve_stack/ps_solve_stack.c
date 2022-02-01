@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/31 19:39:54 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 16:09:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 //TODO REMOVE
 #include <stdio.h>
+#include "ps_exit_prog.h"
 /*
 */
 static void	debug_stack(t_data *data)
@@ -46,16 +47,28 @@ void	ps_stack_solve(t_data *data)
 	
 	int	x;
 
+
 	debug_stack(data);
-	x = 0;
-	while (data->a.mem[0] != data->solve[(data->ac - 1)])
+	while (1)
 	{
+		ps_pb(data);
 		debug_stack(data);
-		ps_ra(data);
-		printf("%d\n\n",  data->solve[(data->ac - 1)]);//TODO WIP ./push_swap 3 2 5 
-		getchar();
-		// printf("\033[2J");
+		if (getchar() == 'q')
+			break;
+		printf("\033[2J");
 	}
+		while (1)
+	{
+		ps_rrb(data);
+		debug_stack(data);
+		if (getchar() == 'q')
+			break;
+		printf("\033[2J");
+	}
+	
+
+	x = 0;
+	ps_solve_stack_find_last(data);//TODO make rra rrb rrr !!!
 	ps_pb(data);
 	while (data->a.len)
 	{
