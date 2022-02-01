@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:36:59 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/01 19:38:22 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	ps_stack_solve(t_data *data)
 	find_biggest_nu(data);	//TODO TODO TODO trouver un moyen de ne pas devoir remonter le plus grand
 							//TODO TODO TODO   x = data->a.mem[0] 
 							//                 while
+							//                    if data->a.mem[0] == x
+							//                        ps_push
 							//                    if x > data->a.len
 							//                        then x = 0;
 	// ps_pb(data);
