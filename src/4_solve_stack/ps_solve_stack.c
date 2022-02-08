@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:43:35 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/08 16:00:29 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,32 @@ void	ps_stack_solve(t_data *data)
 							//                        ps_push
 							//                    if x > data->a.len
 							//                        then x = 0;
+
+/**
+ * I will push the first element in `[a]`.
+ * After i will find the preview index of `data->b.mem[0]`.
+ */
+
+/**
+int	get_pre_index(int index, int max)
+{
+	if (index < 0 || index > max)
+		if (PS_DEBUG)
+		{
+			printf("get_pre_index(): Negatif index or > max !\n");
+			return (-1);
+		}
+	if (!index)
+		return (max - 1);
+	else
+		return (index - 1);
+}
+**/
+/*
+ * When i have the index that i shearch, i will calculate how mutch `ra` or `rra` i need to put the shearch index at the firt place.
+ * Then i push to `B`.
+ */
+
 	// ps_pb(data);
 	debug_stack(data);//TODO REMOVE DEBUG
 	printf("[%d]\n", ps_check_stack_sort(&data->a));
