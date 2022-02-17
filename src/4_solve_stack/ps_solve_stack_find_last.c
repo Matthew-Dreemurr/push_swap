@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:40:41 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/01 19:39:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/17 16:24:51 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@
  * @return `-1` if the fast way is by revese rotate, `1` if by rotate and
  *         `0` if the biggest numbre is on the fist place.
  */
-int	ps_solve_stack_find_last(t_data *data)//TODO changer pour pouvoir trouver un nombre specifique, ex: ps_solve_stack_find_last(data, `23`);
+int	ps_solve_stack_best_move(t_data *data, int index)
 {
 	int	up;
 	int	down;
-	int	index;
 
-	index = data->ac - 1;
 	if (data->a.mem[0] == index)
 		return (0);
 	up = 0;
