@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/21 16:23:09 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:55:00 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include "ps_exit_prog.h"
 /*
-*/
 static void	debug_stack(t_data *data)
 {
 	printf("[ A ] [ B ]\n");
@@ -35,6 +34,7 @@ static void	debug_stack(t_data *data)
 			printf("|    |\n");
 	}
 }
+*/
 
 int	ps_max_bit_size(int nb)
 {
@@ -54,11 +54,6 @@ int	ps_max_bit_size(int nb)
 	return (tmp);
 }
 
-static int	ps_get_bit(int nb, int bit)
-{
-	return (1 & (nb >> bit));
-}
-
 /**
  * When i have the index that i shearch, i will calculate how mutch
  *  `ra` or `rra` i need to put the shearch index at the firt place.
@@ -66,35 +61,10 @@ static int	ps_get_bit(int nb, int bit)
  */
 void	ps_stack_solve(t_data *data)
 {
-	//TODO make a set indexing and check the biggest numbre to avoid check all 32 bits
-	//TODO
-	//TODO int	ps_max_bit_size();
-	//TODO   while
-	//TODO     if 1&(nb<<bit) is true
-	//TODO      then tmp = bit
-	//TODO     bit++
-	//TODO   return tmp
-	int	i;
-	int	x;
-	int	max_bits;
 
-	i = 0;
-	x = 0;
-	max_bits = ps_max_bit_size(data->ac - 1);
-	while (i <= max_bits)
-	{
-		printf("check bit [%d]\n", i);//TODO REMOVE DEBUG
-		while (x < data->ac)
-		{
-			if (!ps_get_bit(data->a.mem[0], i))
-				ps_pb(data);
-			else
-				ps_ra(data);
-			x++;
-		}
-		ps_ppa(data);
-		i++;
-		x = 0;
-	}
-	debug_stack(data);
+	if (data->ac < 6)
+		ps_big_solve(data);
+	else
+		ps_small_solve(data);
+	// debug_stack(data);//TODO REMOVE DEBUG
 }

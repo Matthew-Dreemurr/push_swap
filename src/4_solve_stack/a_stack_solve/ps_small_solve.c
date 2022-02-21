@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_litle_solver.c                                  :+:      :+:    :+:   */
+/*   ps_small_solve.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 14:42:28 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/10 11:48:26 by mahadad          ###   ########.fr       */
+/*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
+/*   Updated: 2022/02/21 16:55:58 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_solve_set.h"
 #include "ps_struct.h"
+#include "ps_solve_stack.h"
 
-void	ps_litle_solver(t_data *data)
+static void	ps_small_solve(t_data *data)
 {
-	(void)data;
-	// if (data->a.len == 2)
 }
