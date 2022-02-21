@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:58:24 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/21 16:55:00 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:45:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,6 @@ static void	debug_stack(t_data *data)
 }
 */
 
-int	ps_max_bit_size(int nb)
-{
-	int	bit;
-	int	tmp;
-	int	int_bits;
-
-	bit = 0;
-	tmp = 0;
-	int_bits = (int)(sizeof(int) * 8);
-	while (bit < int_bits)
-	{
-		if (1 & (nb >> bit))
-			tmp = bit;
-		bit++;
-	}
-	return (tmp);
-}
-
 /**
  * When i have the index that i shearch, i will calculate how mutch
  *  `ra` or `rra` i need to put the shearch index at the firt place.
@@ -61,10 +43,18 @@ int	ps_max_bit_size(int nb)
  */
 void	ps_stack_solve(t_data *data)
 {
-
+	if (ps_check_stack_sort(&data->a))
+	{
+		if (PS_DEBUG)
+			ft_putstr("Stack sort :)\n");
+		return ;
+	}
 	if (data->ac < 6)
-		ps_big_solve(data);
-	else
 		ps_small_solve(data);
+	else
+		ps_big_solve(data);
+	if (!ps_check_stack_sort(&data->a))
+		if (PS_DEBUG)
+			ft_putstr("Stack no sort !?\n");
 	// debug_stack(data);//TODO REMOVE DEBUG
 }

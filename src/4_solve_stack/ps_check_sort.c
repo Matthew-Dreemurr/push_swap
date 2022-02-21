@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:22:34 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/20 17:37:33 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/02/21 17:08:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ int	ps_check_stack_sort(t_stack *stack)
 	while (y < stack->len)
 	{
 		if (stack->mem[x] > stack->mem[y])
+		{
+			if (PS_DEBUG)
+				ft_putstr("ps_check_stack_sort(): `stack->[]` no sort!\n");
 			return (0);
+		}
 		x++;
 		y++;
 	}
