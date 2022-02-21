@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_solve_stack.h                                   :+:      :+:    :+:   */
+/*   get_pre_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 11:59:17 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/21 12:12:19 by mahadad          ###   ########.fr       */
+/*   Created: 2022/02/21 12:11:14 by mahadad           #+#    #+#             */
+/*   Updated: 2022/02/21 12:12:06 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_SOLVE_STACK_H
-# define PS_SOLVE_STACK_H
+#include "ps_debug.h"
+#include "ps_solve_stack.h"
 
-# include "ps_struct.h"
+/**
+ * Will find the preview index of `data->b.mem[0]`.
+ */
 
-void	ps_stack_solve(t_data *data);
-int		ps_get_bit(int nb, int bit);
-int		ps_check_stack_sort(t_stack *stack);
-int		get_pre_index(int index, int max);
-
-#endif
+int	get_pre_index(int index, int max)
+{
+	if (index < 0 || index > max)
+	{
+		if (PS_DEBUG)
+		{
+			printf("get_pre_index(): Negatif index or > max !\n");
+			return (-1);
+		}
+	}
+	if (!index)
+		return (max - 1);
+	else
+		return (index - 1);
+}
