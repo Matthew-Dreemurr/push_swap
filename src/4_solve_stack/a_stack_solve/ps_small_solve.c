@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/07 16:02:58 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/07 16:27:40 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 #include <stdio.h>//TODO REMOVE
 
 /**
- * @brief /!\\ Use the right structure, `arg` = "x x x x" || "1 x x x"
+ * @brief /!\\ Use the right structure, `arg` = "x x x x" || "1 x x x",
+ *            only digit no number [0-9]
  *  
  * @return int If the tab dont matches with the structure return `0` else `1`
  */
@@ -35,8 +36,9 @@ static int	ps_check_solver(t_data *data, const char *arg)
 		ps_exit_prog(EXIT_FAILURE, data, "ps_check_solver(): Bad arg !??\n");
 	while (index < data->ac)
 	{
-		if (ft_atoi(arg + x) != data->a.mem[index])
-			return (0);
+		if ((arg + x) != 'x')
+			if (ft_atoi(arg + x) != data->a.mem[index])
+				return (0);
 		x += 2;
 		index++;
 	}
@@ -45,9 +47,11 @@ static int	ps_check_solver(t_data *data, const char *arg)
 
 void	ps_three_solver(t_data *data)
 {
-	if (ps_check_solver(data, "1 2 0"))//TODO WIP WIP WIP
+	ps_two_solver(data);
+	if (ps_check_solver(data, "x 2 1"))
 	{
-		printf("DEBUG\n");
+		ps_ra(data);
+		ps_sa(data);
 		ps_rra(data);
 	}
 	return ;
@@ -55,7 +59,7 @@ void	ps_three_solver(t_data *data)
 
 void	ps_two_solver(t_data *data)
 {
-	if (data->a.mem[0] > data->a.mem[1])
+	if (data->a.mem[0] > data->a.mem[1])//TODO WIP Demander a Arthure de l'aide
 		ps_sa(data);
 }
 
