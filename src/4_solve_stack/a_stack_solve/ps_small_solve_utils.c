@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:42:19 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 12:08:16 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:30:59 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "ps_exit_prog.h"
 #include <stdlib.h>
 
-
-#include <stdio.h>//TODO REMOVE
 /**
  * @brief /!\\ Use the right structure, `arg` = "x x x x" || "1 x x x",
  *            only digit no number [0-9]

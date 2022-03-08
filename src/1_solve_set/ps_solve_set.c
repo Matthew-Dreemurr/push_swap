@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:06:37 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 16:59:07 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:28:09 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "stdlib.h"
 #include "ps_exit_prog.h"
 
-//TODO REMOVE
-#include <stdio.h>
-
 static void	init(t_data *data)
 {
 	data->solve = ft_calloc(data->ac, sizeof(int));
@@ -27,11 +24,11 @@ static void	init(t_data *data)
 	ft_memcpy(data->solve, data->set, data->ac * sizeof(int));
 }
 
-void	ps_solve_set(t_data *data)//TODO implement hardcode solver for n <= 5
+void	ps_solve_set(t_data *data)
 {
-	init(data);               //TODO TODO 
-	if (data->ac <= 5)        //TODO TODO 
-		ps_big_solver(data);  //TODO TODO <<<------------- remove ps_big_solver and make litle_solver !!!
-	else                      //TODO TODO 
-		ps_big_solver(data);  //TODO TODO 
+	init(data);
+	if (data->ac <= 5)
+		ps_big_solver(data);
+	else
+		ps_big_solver(data);
 }

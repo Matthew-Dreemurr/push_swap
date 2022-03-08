@@ -6,18 +6,12 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 16:16:55 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/19 16:53:44 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:25:55 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-
-#include <stdio.h>//TODO REMOVE
-//TODO REMOVE
-#ifdef WRA
-# include "wraloc.h"
-#endif
 
 /**
  * @brief Count word in `str`.
@@ -71,7 +65,6 @@ int	main(int ac, const char **av)
 {
 	t_data	data;
 
-	setbuf(stdout, NULL);//TODO REMOVE
 	init_data_var(&data);
 	if (ac > 2)
 		ps_arg_init(--ac, ++av, &data);

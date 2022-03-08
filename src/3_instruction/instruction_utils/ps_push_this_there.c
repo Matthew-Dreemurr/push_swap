@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:08:51 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/18 16:34:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:30:07 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,6 @@
 #include "ps_struct.h"
 #include "ps_debug.h"
 #include "libft.h"
-
-//TODO REMOVE
-/*
-#include "stdio.h"
-static void	ps_debug_stack(t_stack *a, t_stack *b)
-{
-	int pad = 3;
-
-	printf("[ %d ] [ %d ]\n", a->len, b->len);
-	for (int i = 0; i < ((a->len > b->len) ? a->len : b->len); i++)
-	{
-		if (i < a->len)
-			printf("|%-*d", pad, a->mem[i]);
-		else
-			printf("|%*s", pad, "");
-		if (i < b->len)
-			printf("|%-*d|\n", pad, b->mem[i]);
-		else
-			printf("|%*s\n", pad, "");
-	}
-	printf("\n");
-}
-*/
 
 static int	check(int len)
 {
@@ -100,16 +77,12 @@ int	ps_push_this_there(t_stack *this, t_stack *there)
 {
 	if (!check(this->len))
 		return (0);
-	// ps_debug_stack(this, there);//TODO REMOVE
 	if (there->len)
 		there_init(there);
-	// ps_debug_stack(this, there);//TODO REMOVE
 	there->mem[0] = this->mem[0];
 	there->len++;
-	// ps_debug_stack(this, there);//TODO REMOVE
 	if (check(this->len))
 		this_clear(this);
 	this->len--;
-	// ps_debug_stack(this, there);//TODO REMOVE
 	return (1);
 }
