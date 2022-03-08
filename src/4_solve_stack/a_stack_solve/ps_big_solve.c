@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:51:54 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/23 16:49:12 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:12:42 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ps_max_bit_size(int nb)
 	}
 	return (tmp);
 }
-#include <stdio.h>
+#include <stdio.h>//TODO REMOVE
 void	ps_big_solve(t_data *data)
 {
 	int	i;
@@ -45,8 +45,8 @@ void	ps_big_solve(t_data *data)
 
 	i = 0;
 	x = 0;
-	max_bits = ps_max_bit_size(data->ac - 1);
-	// printf("max_bits %d\n\n", max_bits);//TODO REMOVE DEBUG
+	max_bits = ps_max_bit_size(data->ac);
+	// printf("agr[%d], max_bits %d\n\n", data->ac, max_bits);//TODO REMOVE DEBUG
 	while (i <= max_bits)
 	{
 		while (x < data->ac)
