@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 12:08:39 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 12:15:41 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ static void	debug_stack(t_data *data)
 }
 */
 
+void	ps_four_solver(t_data *data, int offset)
+{
+	if (ps_check_solver(data, "x 1 x x x", offset))
+	{
+		ps_sa(data);
+	}
+	else if (ps_check_solver(data, "x x 1 x x", offset))
+	{
+		ps_rra(data);
+		ps_rra(data);
+	}
+	else if (ps_check_solver(data, "x x x 1 x", offset))
+	{
+		ps//XXX WIP
+	}
+}
 
 void	ps_three_solver(t_data *data, int offset)
 {
@@ -66,23 +82,22 @@ void	ps_three_solver(t_data *data, int offset)
 	}
 }
 
-void	ps_four_solver(t_data *data)
+void	ps_four_solver(t_data *data, int offset)
 {
-	if (ps_check_solver(data, "x 1 x x", 0))
+	if (ps_check_solver(data, "x 1 x x", offset))
 	{
 		ps_sa(data);
 	}
-	else if (ps_check_solver(data, "x x 1 x", 0))
+	else if (ps_check_solver(data, "x x 1 x", offset))
 	{
 		ps_ra(data);
 		ps_ra(data);
 	}
-	else if (ps_check_solver(data, "x x x 1", 0))
+	else if (ps_check_solver(data, "x x x 1", offset))
 	{
 		ps_rra(data);
 	}
 	ps_pb(data);
-	// debug_stack(data);//TODO REMOVE
 	ps_three_solver(data, -1);
 	ps_pa(data);
 }
@@ -105,5 +120,7 @@ void	ps_small_solve(t_data *data)
 	else if (data->ac == 3)
 		ps_three_solver(data, 0);
 	else if (data->ac == 4)
-		ps_four_solver(data);
+		ps_four_solver(data, -1);
+	else if (data->ac == 4)
+		ps_five_solver(data);
 }
