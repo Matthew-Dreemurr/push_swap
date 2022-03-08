@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/31 19:25:10 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 10:47:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	find_index(t_data *data, int nb)
 	while (index < data->ac)
 	{
 		if (data->solve[index] == nb)
-			return (index);
+			return (index + 1);//XXX add +1 to begin the index @ `1`
 		index++;
 	}
 	if (PS_DEBUG)

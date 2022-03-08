@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/07 16:27:40 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 11:22:08 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ps_check_solver(t_data *data, const char *arg)
 		ps_exit_prog(EXIT_FAILURE, data, "ps_check_solver(): Bad arg !??\n");
 	while (index < data->ac)
 	{
-		if ((arg + x) != 'x')
+		if (*(arg + x) != 'x')
 			if (ft_atoi(arg + x) != data->a.mem[index])
 				return (0);
 		x += 2;
@@ -47,19 +47,54 @@ static int	ps_check_solver(t_data *data, const char *arg)
 
 void	ps_three_solver(t_data *data)
 {
-	ps_two_solver(data);
-	if (ps_check_solver(data, "x 2 1"))
+	if (ps_check_solver(data, "1 3 2"))
+	{
+		ps_sa(data);
+		ps_ra(data);
+	}
+	else if (ps_check_solver(data, "2 1 3"))
+	{
+		ps_sa(data);
+	}
+	else if (ps_check_solver(data, "2 3 1"))
+	{
+		ps_rra(data);
+	}
+	else if (ps_check_solver(data, "3 1 2"))
 	{
 		ps_ra(data);
+	}
+	else if (ps_check_solver(data, "3 2 1"))
+	{
 		ps_sa(data);
 		ps_rra(data);
 	}
-	return ;
+}
+
+void	ps_four_solver(t_data *data)
+{
+	if (ps_check_solver(data, "x 1 x x"))
+	{
+		printf("%d\n", __LINE__);
+		ps_sa(data);
+	}
+	else if (ps_check_solver(data, "x x 1 x"))
+	{
+		printf("%d\n", __LINE__);
+		ps_ra(data);
+		ps_ra(data);
+	}
+	else if (ps_check_solver(data, "x x x 1"))
+	{
+		printf("%d\n", __LINE__);
+		ps_rra(data);
+	}
+	ps_pb(data);
 }
 
 void	ps_two_solver(t_data *data)
 {
-	if (data->a.mem[0] > data->a.mem[1])//TODO WIP Demander a Arthure de l'aide
+	if (ps_check_solver(data, "2 1"))
 		ps_sa(data);
 }
 
@@ -70,9 +105,10 @@ void	ps_two_solver(t_data *data)
  */
 void	ps_small_solve(t_data *data)
 {
-	(void)data;//TODO TODO WIP
 	if (data->ac == 2)
 		ps_two_solver(data);
-	if (data->ac == 3)
+	else if (data->ac == 3)
 		ps_three_solver(data);
+	else if (data->ac == 4)
+		ps_four_solver(data);
 }
