@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 11:41:02 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 12:08:39 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,26 @@
 
 #include <stdio.h>//TODO REMOVE
 
-/**
- * @brief /!\\ Use the right structure, `arg` = "x x x x" || "1 x x x",
- *            only digit no number [0-9]
- *          offset is use when we need to add or remove a index
- *  
- * @return int If the tab dont matches with the structure return `0` else `1`
- */
-static int	ps_check_solver(t_data *data, const char *arg, int offset)
+//TODO REMOVE
+/*
+#include <stdio.h>
+static void	debug_stack(t_data *data)
 {
-	int	index;
-	int	x;
-
-	index = 0;
-	x = 0;
-	if (!charsetstr_strict(arg, " 1234567890x"))
-		ps_exit_prog(EXIT_FAILURE, data, "ps_check_solver(): Bad arg !??\n");
-	while (index < data->ac)
+	printf("[ A ] [ B ]\n");
+	for (int i = 0; i < data->ac; i++)
 	{
-		if (*(arg + x) != 'x')
-			if (ft_atoi(arg + x) != (data->a.mem[index] + offset))
-				return (0);
-		x += 2;
-		index++;
+		if (i < data->a.len)
+			printf("|%-4d", data->a.mem[i]);
+		else
+			printf("|    ");
+		if (i < data->b.len)
+			printf("|%-4d|\n", data->b.mem[i]);
+		else
+			printf("|    |\n");
 	}
-	return (1);
 }
+*/
+
 
 void	ps_three_solver(t_data *data, int offset)
 {
@@ -88,6 +82,7 @@ void	ps_four_solver(t_data *data)
 		ps_rra(data);
 	}
 	ps_pb(data);
+	// debug_stack(data);//TODO REMOVE
 	ps_three_solver(data, -1);
 	ps_pa(data);
 }
