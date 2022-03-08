@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:44:34 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/21 16:36:25 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:49:52 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,7 @@
 #include "ps_exit_prog.h"
 #include <stdlib.h>
 
-//TODO REMOVE
-#include <stdio.h>
-/**
-static void	debug_print_tab(int *tab, int len)
-{
-	for (int i = 0; i < len; i++)
-		printf("%3d|[%d]\n", i, tab[i]);
-}
-**/
-
-void	ps_big_solver(t_data *data)//TODO
+void	ps_big_solver(t_data *data)
 {
 	int	i;
 	int	x;
@@ -46,7 +36,4 @@ void	ps_big_solver(t_data *data)//TODO
 		data->solve[x + 1] = tmp;
 		i++;
 	}
-	//TODO REMOTE
-	// printf("Solve\n");//TODO REMOVE DEBUG
-	// debug_print_tab(data->solve, data->ac);//TODO REMOVE DEBUG
 }

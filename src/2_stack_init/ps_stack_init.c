@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:10:06 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 10:47:26 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:51:28 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,6 @@
 #include "stdlib.h"
 #include "libft.h"
 #include "ps_debug.h"
-
-//TODO REMOVE
-/*
-#include <stdio.h>
-static void	//tmp//debug_stack(t_data *data)
-{
-	printf("[ A ] [ B ]\n");
-	for (int i = 0; i < data->ac; i++)
-	{
-		if (i < data->a.len)
-			printf("|%-4d", data->a.mem[i]);
-		else
-			printf("|    ");
-		if (i < data->b.len)
-			printf("|%-4d|\n", data->b.mem[i]);
-		else
-			printf("|    |\n");
-	}
-}
-*/
 
 /**
  * @brief alloc stack `a` 'n `b`
@@ -49,6 +29,9 @@ static void	alloc_stack(t_data *data)
 		ps_exit_prog(EXIT_FAILURE, data, "data->stack alloc fail!");
 }
 
+/**
+ * We add `+1` to the return value to begin the index to 1
+ */
 static int	find_index(t_data *data, int nb)
 {
 	int	index;
@@ -57,7 +40,7 @@ static int	find_index(t_data *data, int nb)
 	while (index < data->ac)
 	{
 		if (data->solve[index] == nb)
-			return (index + 1);//XXX add +1 to begin the index @ `1`
+			return (index + 1);
 		index++;
 	}
 	if (PS_DEBUG)
@@ -83,5 +66,4 @@ void	ps_stack_init(t_data *data)
 	data->a.len = data->ac;
 	alloc_stack(data);
 	populate_stack(data);
-	//tmp//debug_stack(data);//TODO REMOVE
 }
