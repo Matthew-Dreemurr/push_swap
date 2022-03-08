@@ -55,3 +55,4 @@ dkms.conf
 .vscode/settings.json
 push_swap
 includes/*.h
+push_swap_run_args.log
