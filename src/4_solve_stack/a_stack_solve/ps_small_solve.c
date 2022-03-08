@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 13:34:28 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/08 13:44:18 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 //TODO REMOVE
 /*
-*/
 #include <stdio.h>
 static void	debug_stack(t_data *data)
 {
@@ -38,6 +37,7 @@ static void	debug_stack(t_data *data)
 			printf("|    |\n");
 	}
 }
+*/
 
 void	ps_three_solver(t_data *data, int offset)
 {
@@ -63,7 +63,6 @@ void	ps_three_solver(t_data *data, int offset)
 		ps_sa(data);
 		ps_rra(data);
 	}
-		debug_stack(data);
 }
 
 void	ps_four_solver(t_data *data, int offset)
@@ -82,7 +81,6 @@ void	ps_four_solver(t_data *data, int offset)
 		ps_rra(data);
 	}
 	ps_pb(data);
-		debug_stack(data);
 	ps_three_solver(data, -1 + offset);
 	ps_pa(data);
 }
@@ -100,15 +98,14 @@ void	ps_five_solver(t_data *data)
 	}
 	else if (ps_check_solver(data, "x x x 1 x", 0))
 	{
-		ps_ra(data);
-		ps_ra(data);
+		ps_rra(data);
+		ps_rra(data);
 	}
 	else if (ps_check_solver(data, "x x x x 1", 0))
 	{
-		ps_ra(data);
+		ps_rra(data);
 	}
 	ps_pb(data);
-		debug_stack(data);
 	ps_four_solver(data, -1);
 	ps_pa(data);
 }
@@ -126,15 +123,12 @@ void	ps_two_solver(t_data *data)
  */
 void	ps_small_solve(t_data *data)
 {
-		debug_stack(data);
-
 	if (data->ac == 2)
 		ps_two_solver(data);
 	else if (data->ac == 3)
 		ps_three_solver(data, 0);
 	else if (data->ac == 4)
-		ps_four_solver(data, -1);
+		ps_four_solver(data, 0);
 	else if (data->ac == 5)
 		ps_five_solver(data);
-		debug_stack(data);
 }
