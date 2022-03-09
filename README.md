@@ -1,15 +1,18 @@
+# Push swap
+
 This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
 
 
+## Why does the code look weird ?
 
+The 42 curriculum asks us to code according to the `Norme`, this standard forbids us certain control structures (like `do while`, `for`, ...), a limit of 25 lines and 5 variables per function, 5 function max per `.c` and and other constraints.
 
+This project has been coded according to the `NormeV3` standard.
 
+[NormeV3 PDF](https://github.com/42School/norminette) used in this projetc
 
-
-
-
-# Push swap
+[Norme repo](https://github.com/42School/norminette)
 
 ## The logic
 
@@ -219,39 +222,47 @@ typedef struct s_data
     :--.[6]<:      [ ]    |   [5]   [ ]
     ```
 
-### Sort methode 
-I will use ardcode sort for the set that dont exceed 5 number.
-
-For the biger set i will use [[Radix]] with [[Bitwise Operators]].
-
-The way i manage the bitwise to acces eatch bit:
-```c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main()
-{
-    int i = 2147483647;
-
-    printf("Size of int: %ld bit\n", sizeof(int) * 8); // Size of int in bit
-    for(int y = 0; y < (sizeof(int) * 8); y++)
-        printf("%d", 1&(i>>y)); // Skip bit and compare with 1
-                                // The `&` operator will be true only if the two
-                                // bit compare is 1.
-                                // 1 in binary is 0001
-                                // So all the digit exept the last will be false
-    return 0;
-}
-
-Output:
-Size of int: 32 bit
-11111111111111111111111111111110
-```
 
 ### How I find instruction ?
 
+I will push the first element in `[a]`.
+After i will find the preview index of `data->b.mem[0]`.
 
+```c
+#include <stdio.h>
 
+#define PS_DEBUG 1
+
+int	get_pre_index(int index, int max)
+{
+	if (index < 0 || index > max)
+		if (PS_DEBUG)
+		{
+			printf("get_pre_index(): Negatif index or > max !\n");
+			return (-1);
+		}
+	if (!index)
+		return (max - 1);
+	else
+		return (index - 1);
+}
+
+int main(void)
+{
+	int ac = 12;
+
+	while (ac != 13)
+	{
+		printf("[%d]\n", ac);
+		ac = get_pre_index(ac, 24);
+	}
+	return (0);
+}
+
+```
+
+When i have the index that i shearch, i will calculate how mutch `ra` or `rra` i need to put the shearch index at the firt place.
+Then i push to `B`.
 
 
 This work is published under the terms of **[42 Unlicense](https://github.com/gcamerli/42unlicense)**.
