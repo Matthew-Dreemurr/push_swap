@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 17:08:14 by mahadad           #+#    #+#             */
-/*   Updated: 2022/02/21 12:43:25 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/09 10:58:43 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 #include "libft.h"
 #include "ps_struct.h"
 #include "ps_debug.h"
-
-//TODO REMOVE
-#ifdef WRA
-# include "wraloc.h"
-#endif
 
 /**
  * @brief 

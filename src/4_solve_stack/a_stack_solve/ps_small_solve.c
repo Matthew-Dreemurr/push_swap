@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:55:22 by mahadad           #+#    #+#             */
-/*   Updated: 2022/03/08 13:44:18 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/09 10:59:26 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,6 @@
 #include "libft.h"
 #include "ps_exit_prog.h"
 #include <stdlib.h>
-
-#include <stdio.h>//TODO REMOVE
-
-//TODO REMOVE
-/*
-#include <stdio.h>
-static void	debug_stack(t_data *data)
-{
-	printf("[ A ] [ B ]\n");
-	for (int i = 0; i < data->ac; i++)
-	{
-		if (i < data->a.len)
-			printf("|%-4d", data->a.mem[i]);
-		else
-			printf("|    ");
-		if (i < data->b.len)
-			printf("|%-4d|\n", data->b.mem[i]);
-		else
-			printf("|    |\n");
-	}
-}
-*/
 
 void	ps_three_solver(t_data *data, int offset)
 {
@@ -116,11 +94,6 @@ void	ps_two_solver(t_data *data)
 		ps_sa(data);
 }
 
-/**
- * @brief
- *
- * @param data
- */
 void	ps_small_solve(t_data *data)
 {
 	if (data->ac == 2)

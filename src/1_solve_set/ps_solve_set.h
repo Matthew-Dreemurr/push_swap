@@ -6,7 +6,7 @@
 /*   By: mahadad <mahadad@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 20:05:45 by mahadad           #+#    #+#             */
-/*   Updated: 2022/01/20 17:58:01 by mahadad          ###   ########.fr       */
+/*   Updated: 2022/03/09 11:00:48 by mahadad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define PS_SOLVE_SET_H
 
 # include "ps_struct.h"
-
-# ifdef WRA
-#  include "wraloc.h"
-# endif
 
 void	ps_solve_set(t_data *data);
 
