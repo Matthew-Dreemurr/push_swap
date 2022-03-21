@@ -27,8 +27,5 @@ static void	init(t_data *data)
 void	ps_solve_set(t_data *data)
 {
 	init(data);
-	if (data->ac <= 5)
-		ps_big_solver(data);
-	else
-		ps_big_solver(data);
+	ps_big_solver(data);
 }

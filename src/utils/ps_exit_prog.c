@@ -18,15 +18,6 @@
 #include "ps_struct.h"
 #include "ps_debug.h"
 
-//TODO REMOVE
-#ifdef WRA
-# include "wraloc.h"
-#endif
-
-/**
- * @brief 
- * 
- */
 void	ps_exit_prog(int ret, t_data *data, const char *debug)
 {
 	if (data)

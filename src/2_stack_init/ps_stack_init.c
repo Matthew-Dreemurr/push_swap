@@ -60,7 +60,6 @@ static void	populate_stack(t_data *data)
 	}
 }
 
-//TODO use data->solve to store the indxe of all number.
 void	ps_stack_init(t_data *data)
 {
 	data->a.len = data->ac;
