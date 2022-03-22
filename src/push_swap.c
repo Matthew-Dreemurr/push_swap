@@ -74,7 +74,7 @@ int	main(int ac, const char **av)
 		ps_arg_init(word_count(*av, ' '), (const char **)data.tmp, &data);
 	}
 	else
-		ps_exit_prog(EXIT_FAILURE, NULL, "Bad ac amount\n");
+		ps_exit_prog(EXIT_SUCCESS, NULL, "Bad ac amount\n");
 	ps_solve_set(&data);
 	ps_stack_init(&data);
 	ps_stack_solve(&data);

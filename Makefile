@@ -50,7 +50,39 @@ HEADER			= $(shell find src -type f -name "*.h")
 HEADER			+= libft/includes/libft.h
 HEADER_DEP		= $(addprefix $(DEP_INCLUDE_DIR), $(notdir $(HEADER)))
 
-SRCS	= $(shell find $(SRC_DIR) -type f -name "*.c")
+SRCS	= \
+src/0_parser_init_set/ps_arg_check.c \
+src/0_parser_init_set/ps_arg_init.c \
+src/1_solve_set/ps_big_solver.c \
+src/1_solve_set/ps_solve_set.c \
+src/2_stack_init/ps_stack_init.c \
+src/3_instruction/instruction_utils/ps_push_all_this_there.c \
+src/3_instruction/instruction_utils/ps_push_this_there.c \
+src/3_instruction/instruction_utils/ps_rotate_down_stack.c \
+src/3_instruction/instruction_utils/ps_rotate_up_stack.c \
+src/3_instruction/instruction_utils/ps_swap_this_w_that.c \
+src/3_instruction/p/ps_pa.c \
+src/3_instruction/p/ps_pb.c \
+src/3_instruction/p/ps_ppa.c \
+src/3_instruction/p/ps_ppb.c \
+src/3_instruction/r/ps_ra.c \
+src/3_instruction/r/ps_rb.c \
+src/3_instruction/r/ps_rr.c \
+src/3_instruction/r/ps_rra.c \
+src/3_instruction/r/ps_rrb.c \
+src/3_instruction/r/ps_rrr.c \
+src/3_instruction/s/ps_sa.c \
+src/3_instruction/s/ps_sb.c \
+src/3_instruction/s/ps_ss.c \
+src/4_solve_stack/a_stack_solve/ps_big_solve.c \
+src/4_solve_stack/a_stack_solve/ps_small_solve.c \
+src/4_solve_stack/a_stack_solve/ps_small_solve_utils.c \
+src/4_solve_stack/ps_check_sort.c \
+src/4_solve_stack/ps_solve_stack.c \
+src/push_swap.c \
+src/utils/ps_exit_prog.c \
+src/utils/ps_prog_free.c
+
 SRC		= $(notdir $(SRCS))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_DIR), $(OBJ))
